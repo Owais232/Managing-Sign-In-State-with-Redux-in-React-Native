@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Button, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { Login } from "../redux/UserActions";
+import { RootState } from "../redux/Store";
 
 
 const Home=()=>{
     
-    const isSignedin=useSelector(state=>state.userData.isSignedin);
+    const isSignedin=useSelector((state: RootState)=>state.userData.isSignedin);
 
     const dispatch=useDispatch();
     return(

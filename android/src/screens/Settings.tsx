@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Button, Text, Vibration, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../redux/UserActions";
+import { RootState } from "../redux/Store";
 
 
 const Setting=()=>{
     
-    const isSignedin=useSelector(state=>state.userData.isSignedin);
-    const name=useSelector(state=>state.userData.Usrname);
+    const isSignedin=useSelector((state: RootState)=>state.userData.isSignedin);
+    const name=useSelector((state: RootState)=>state.userData.Usrname);
 
     const dispatch=useDispatch();
     return(
