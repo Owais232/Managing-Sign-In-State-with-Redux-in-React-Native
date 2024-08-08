@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Button, Text, View } from "react-native";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Login } from "../redux/UserActions";
 
 
 const Home=()=>{
     
     const isSignedin=useSelector(state=>state.userData.isSignedin);
+
+    const dispatch=useDispatch();
     return(
 
     <View style={{justifyContent:'center',alignContent:'center',alignItems:'center',flex:1}}>
@@ -21,6 +24,7 @@ const Home=()=>{
         ):(
             <View>
                 <Text>Please Sign in </Text>
+                <Button title="Log In " onPress={()=>dispatch(Login())}/>
             </View>
             
         )}
